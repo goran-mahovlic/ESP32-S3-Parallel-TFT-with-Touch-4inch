@@ -31,17 +31,17 @@
         {
           "objID": "ca1dc816-e4fc-449c-cc13-f6c87009fd5b",
           "fileName": "screens.h",
-          "template": "#ifndef EEZ_LVGL_UI_SCREENS_H\r\n#define EEZ_LVGL_UI_SCREENS_H\r\n\r\n#include \"lvgl/lvgl.h\"\r\n\r\n#ifdef __cplusplus\r\nextern \"C\" {\r\n#endif\r\n\r\n//${eez-studio LVGL_SCREENS_DECL}\r\n//${eez-studio LVGL_SCREENS_DECL_EXT}\r\n\r\n#ifdef __cplusplus\r\n}\r\n#endif\r\n\r\n#endif /*EEZ_LVGL_UI_SCREENS_H*/"
+          "template": "#ifndef EEZ_LVGL_UI_SCREENS_H\r\n#define EEZ_LVGL_UI_SCREENS_H\r\n\r\n#include \"lvgl.h\"\r\n\r\n#ifdef __cplusplus\r\nextern \"C\" {\r\n#endif\r\n\r\n//${eez-studio LVGL_SCREENS_DECL}\r\n//${eez-studio LVGL_SCREENS_DECL_EXT}\r\n\r\n#ifdef __cplusplus\r\n}\r\n#endif\r\n\r\n#endif /*EEZ_LVGL_UI_SCREENS_H*/"
         },
         {
           "objID": "a085d6f7-4ac9-4864-a81b-085da9765820",
-          "fileName": "screens.c",
+          "fileName": "screens.cpp",
           "template": "#include \"screens.h\"\n#include \"images.h\"\n#include \"fonts.h\"\n#include \"actions.h\"\n#include \"vars.h\"\n#include \"ui.h\"\n\n//${eez-studio LVGL_SCREENS_DEF}\n//${eez-studio LVGL_SCREENS_DEF_EXT}"
         },
         {
           "objID": "6946a61d-bdb1-44a8-a780-e6cf28c2f88f",
           "fileName": "actions.h",
-          "template": "#ifndef EEZ_LVGL_UI_ACTIONS_H\r\n#define EEZ_LVGL_UI_ACTIONS_H\r\n\r\n#include \"lvgl/lvgl.h\"\r\n\r\n//${eez-studio LVGL_ACTIONS_DECL}\r\n\r\n#endif /*EEZ_LVGL_UI_ACTIONS_H*/"
+          "template": "#ifndef EEZ_LVGL_UI_ACTIONS_H\r\n#define EEZ_LVGL_UI_ACTIONS_H\r\n\r\n#include \"lvgl.h\"\r\n\r\n//${eez-studio LVGL_ACTIONS_DECL}\r\n\r\n#endif /*EEZ_LVGL_UI_ACTIONS_H*/"
         },
         {
           "objID": "56e09a74-8fc0-46c2-d0b9-1fd05358002f",
@@ -51,30 +51,30 @@
         {
           "objID": "487e4fa2-3d33-47ec-d3cd-8e52dd59fc18",
           "fileName": "images.h",
-          "template": "#ifndef EEZ_LVGL_UI_IMAGES_H\r\n#define EEZ_LVGL_UI_IMAGES_H\r\n\r\n#include \"lvgl/lvgl.h\"\r\n\r\n//${eez-studio LVGL_IMAGES_DECL}\r\n\r\n#endif /*EEZ_LVGL_UI_IMAGES_H*/"
+          "template": "#ifndef EEZ_LVGL_UI_IMAGES_H\r\n#define EEZ_LVGL_UI_IMAGES_H\r\n\r\n#include \"lvgl.h\"\r\n\r\n//${eez-studio LVGL_IMAGES_DECL}\r\n\r\n#endif /*EEZ_LVGL_UI_IMAGES_H*/"
         },
         {
           "objID": "b35442e8-0863-4e9d-9bf2-79f67ce15354",
-          "fileName": "images.c",
+          "fileName": "images.cpp",
           "template": "#include \"images.h\"\n\n//${eez-studio LVGL_IMAGES_DEF}"
         },
         {
           "objID": "7c8dab44-93a9-4021-b95e-83ceb9fababd",
           "fileName": "fonts.h",
-          "template": "#ifndef EEZ_LVGL_UI_FONTS_H\r\n#define EEZ_LVGL_UI_FONTS_H\r\n\r\n#include \"lvgl/lvgl.h\"\r\n\r\n//${eez-studio LVGL_FONTS_DECL}\r\n\r\n#endif /*EEZ_LVGL_UI_FONTS_H*/"
+          "template": "#ifndef EEZ_LVGL_UI_FONTS_H\r\n#define EEZ_LVGL_UI_FONTS_H\r\n\r\n#include \"lvgl.h\"\r\n\r\n//${eez-studio LVGL_FONTS_DECL}\r\n\r\n#endif /*EEZ_LVGL_UI_FONTS_H*/"
         },
         {
           "objID": "964d6dc3-1192-45c8-e853-957bbfc8019d",
           "fileName": "ui.h",
-          "template": "#ifndef EEZ_LVGL_UI_GUI_H\n#define EEZ_LVGL_UI_GUI_H\n\n#include \"lvgl/lvgl.h\"\n\nvoid ui_init();\nvoid ui_tick();\n\nvoid loadScreen(int index);\n\n#endif // EEZ_LVGL_UI_GUI_H"
+          "template": "#ifndef EEZ_LVGL_UI_GUI_H\n#define EEZ_LVGL_UI_GUI_H\n\n#include \"lvgl.h\"\n\nvoid ui_init();\nvoid ui_tick();\n\nvoid loadScreen(int index);\n\n#endif // EEZ_LVGL_UI_GUI_H"
         },
         {
           "objID": "6cd0436e-d32a-4b33-ca3e-8969abed1c80",
-          "fileName": "ui.c",
+          "fileName": "ui.cpp",
           "template": "#include \"ui.h\"\n#include \"screens.h\"\n#include \"images.h\"\n#include \"flow_def.h\"\n\nstatic int16_t currentScreen = -1;\n\nstatic lv_obj_t *getLvglObjectFromIndex(int32_t index) {\n    if (index == -1) {\n        return 0;\n    }\n    return ((lv_obj_t **)&objects)[index];\n}\n\nstatic const void *getLvglImageByName(const char *name) {\n    for (size_t imageIndex = 0; imageIndex < sizeof(images) / sizeof(ext_img_desc_t); imageIndex++) {\n        if (strcmp(images[imageIndex].name, name) == 0) {\n            return images[imageIndex].img_dsc;\n        }\n    }\n    return 0;\n}\n\nvoid loadScreen(int index) {\n    currentScreen = index;\n    lv_obj_t *screen = getLvglObjectFromIndex(index);\n    lv_scr_load_anim(screen, LV_SCR_LOAD_ANIM_FADE_IN, 200, 0, false);\n}\n\nvoid ui_init() {\n    create_screens();\n    loadScreen(0);\n}\n\nvoid ui_tick() {\n    tick_screen(currentScreen);\n}\n"
         }
       ],
-      "destinationFolder": ".",
+      "destinationFolder": "ui",
       "lvglInclude": "lvgl.h"
     }
   },

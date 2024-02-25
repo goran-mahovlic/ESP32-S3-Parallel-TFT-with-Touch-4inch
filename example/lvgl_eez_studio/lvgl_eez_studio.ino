@@ -19,10 +19,13 @@
  * Optional: Show CPU usage and FPS count
  * #define LV_USE_PERF_MONITOR 1
  ******************************************************************************/
- 
-//#include "lv_demo_benchmark.h"
+#define EEZ_STUDIO
+
+
+#include "lv_demo_benchmark.h"
+
 #include "lvgl.h"
-#include "ui.h"
+#include "ui/ui.h"
 
 #include <Arduino_GFX_Library.h>
 
@@ -127,6 +130,6 @@ void setup()
 void loop()
 {
    lv_timer_handler(); /* let the GUI do its work */
-   //ui_tick();
+   ui_tick();
    delay(5);
 }
