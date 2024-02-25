@@ -957,7 +957,11 @@
       }
     },
     "[hello_world.eez-project]:/userPages/0[flow-state]": {
-      "selection": {},
+      "selection": {
+        "0": {
+          "$selected": true
+        }
+      },
       "transform": {
         "translate": {
           "x": -400,

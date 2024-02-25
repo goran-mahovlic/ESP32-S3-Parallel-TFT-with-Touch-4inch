@@ -14,7 +14,7 @@
       "extensions": [],
       "imports": [],
       "flowSupport": false,
-      "displayWidth": 800,
+      "displayWidth": 480,
       "displayHeight": 480,
       "colorFormat": "BGR",
       "resourceFiles": []
@@ -92,7 +92,7 @@
         {
           "objID": "6b272cb8-48b4-467f-c130-a1edc1f930b7",
           "type": "LVGLLabelWidget",
-          "left": 356,
+          "left": 196,
           "top": 232,
           "width": 89,
           "height": 16,
@@ -133,7 +133,7 @@
       "name": "Main",
       "left": 0,
       "top": 0,
-      "width": 800,
+      "width": 480,
       "height": 480,
       "lvglLocalStyles": {
         "objID": "e85dbd5d-8325-1629-003b-86fd654ae635"
