@@ -19,13 +19,11 @@
  * Optional: Show CPU usage and FPS count
  * #define LV_USE_PERF_MONITOR 1
  ******************************************************************************/
-#define EEZ_STUDIO
-
 
 #include "lv_demo_benchmark.h"
 
 #include "lvgl.h"
-#include "ui/ui.h"
+#include "ui.h"
 
 #include <Arduino_GFX_Library.h>
 
