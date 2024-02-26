@@ -8,8 +8,6 @@
 extern "C" {
 #endif
 
-#define EEZ_FOR_LVGL
-
 void ui_init();
 void ui_tick();
 

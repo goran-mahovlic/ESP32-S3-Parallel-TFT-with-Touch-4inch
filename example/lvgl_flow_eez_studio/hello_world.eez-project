@@ -121,7 +121,13 @@
           "top": 232,
           "width": 89,
           "height": 16,
-          "customInputs": [],
+          "customInputs": [
+            {
+              "objID": "70b42089-eb38-4a28-8d92-57f1f5de0054",
+              "name": "lbl_hello_fade",
+              "type": "any"
+            }
+          ],
           "customOutputs": [],
           "style": {
             "objID": "a9bf737e-205d-4003-aae9-0ca3b6710d43",
@@ -131,6 +137,7 @@
           },
           "timeline": [],
           "eventHandlers": [],
+          "identifier": "lbl_hello",
           "leftUnit": "px",
           "topUnit": "px",
           "widthUnit": "content",
@@ -151,9 +158,128 @@
           "textType": "literal",
           "longMode": "WRAP",
           "recolor": false
+        },
+        {
+          "objID": "4acfcd6b-6962-412d-b0fd-450abb4f717b",
+          "type": "LVGLSpinnerWidget",
+          "left": 250,
+          "top": 91,
+          "width": 301,
+          "height": 299,
+          "customInputs": [
+            {
+              "objID": "a03b4449-ebc2-49ae-fe5a-17c38f429788",
+              "name": "spin_fade",
+              "type": "any"
+            }
+          ],
+          "customOutputs": [],
+          "style": {
+            "objID": "17125e49-8a00-478f-e1ef-f17748b827f6",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "timeline": [],
+          "eventHandlers": [],
+          "identifier": "arc_hello",
+          "leftUnit": "px",
+          "topUnit": "px",
+          "widthUnit": "px",
+          "heightUnit": "px",
+          "children": [],
+          "flags": "GESTURE_BUBBLE|SNAPPABLE|SCROLL_CHAIN",
+          "hiddenFlagType": "literal",
+          "clickableFlagType": "literal",
+          "scrollbarMode": "auto",
+          "scrollDirection": "all",
+          "checkedStateType": "literal",
+          "disabledStateType": "literal",
+          "states": "",
+          "localStyles": {
+            "objID": "5073b014-c50d-4c54-91bd-00216b47ef8c"
+          }
+        },
+        {
+          "objID": "3b443575-029d-430b-fea9-809a4b94b0cb",
+          "type": "LVGLActionComponent",
+          "left": -815,
+          "top": 75,
+          "width": 796,
+          "height": 73,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "a43e4470-dd0c-464f-f9b7-2fbeac0551c0",
+              "action": "PLAY_ANIMATION",
+              "target": "arc_hello",
+              "property": "OPACITY",
+              "start": 0,
+              "end": 100,
+              "delay": 0,
+              "time": 1000,
+              "relative": true,
+              "instant": false,
+              "path": ""
+            },
+            {
+              "objID": "234359fd-da8a-459d-dc6b-2cf8afc8ed36",
+              "action": "PLAY_ANIMATION",
+              "target": "arc_hello",
+              "property": "OPACITY",
+              "start": 100,
+              "end": 0,
+              "delay": 1000,
+              "time": 1000,
+              "relative": true,
+              "instant": false,
+              "path": ""
+            }
+          ]
+        },
+        {
+          "objID": "4b960f6a-be1c-4e97-bd1e-50898adea76b",
+          "type": "LVGLActionComponent",
+          "left": -680,
+          "top": 309,
+          "width": 661,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "actions": [
+            {
+              "objID": "896e9272-5382-4990-c27b-8a8fb55b32ae",
+              "action": "PLAY_ANIMATION",
+              "target": "lbl_hello",
+              "property": "OPACITY",
+              "start": 0,
+              "end": 100,
+              "delay": 0,
+              "time": 1000,
+              "relative": true,
+              "instant": false,
+              "path": ""
+            }
+          ]
         }
       ],
-      "connectionLines": [],
+      "connectionLines": [
+        {
+          "objID": "a2d7bfd8-f7fc-411e-f8a1-14f1be276de4",
+          "source": "3b443575-029d-430b-fea9-809a4b94b0cb",
+          "output": "@seqout",
+          "target": "4acfcd6b-6962-412d-b0fd-450abb4f717b",
+          "input": "spin_fade"
+        },
+        {
+          "objID": "336cb87f-327d-473e-ae9d-8b548e360b2b",
+          "source": "4b960f6a-be1c-4e97-bd1e-50898adea76b",
+          "output": "@seqout",
+          "target": "6b272cb8-48b4-467f-c130-a1edc1f930b7",
+          "input": "lbl_hello_fade"
+        }
+      ],
       "localVariables": [],
       "name": "Main",
       "left": 0,

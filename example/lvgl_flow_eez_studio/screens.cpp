@@ -18,10 +18,19 @@ void create_screen_main() {
     {
         lv_obj_t *parent_obj = obj;
         {
+            // lbl_hello
             lv_obj_t *obj = lv_label_create(parent_obj);
+            objects.lbl_hello = obj;
             lv_obj_set_pos(obj, 356, 232);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
             lv_label_set_text(obj, "Hello, world!");
+        }
+        {
+            // arc_hello
+            lv_obj_t *obj = lv_spinner_create(parent_obj, 1000, 60);
+            objects.arc_hello = obj;
+            lv_obj_set_pos(obj, 250, 91);
+            lv_obj_set_size(obj, 301, 299);
         }
     }
 }

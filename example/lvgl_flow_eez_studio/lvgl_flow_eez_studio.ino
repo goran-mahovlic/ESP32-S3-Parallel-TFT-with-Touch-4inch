@@ -85,7 +85,6 @@ void setup()
    digitalWrite(GFX_BL, HIGH);
 #endif
    lv_init();
-   ui_init();
 
    screenWidth = gfx->width();
    screenHeight = gfx->height();
@@ -118,6 +117,7 @@ void setup()
       lv_indev_drv_register(&indev_drv);
 
       //lv_demo_benchmark();
+      ui_init();
 
       Serial.println("Setup done");
    }
@@ -126,7 +126,8 @@ void setup()
 
 void loop()
 {
-   lv_timer_handler(); /* let the GUI do its work */
+   //lv_timer_handler(); /* let the GUI do its work */
+   lv_task_handler();
    ui_tick();
    delay(5);
 }
